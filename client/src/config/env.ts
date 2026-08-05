@@ -23,11 +23,7 @@ if (!parsed.success) {
   }
 }
 
-export const env = parsed.data || {
-  NEXT_PUBLIC_API_URL: 'http://localhost:5000',
-  NEXT_PUBLIC_APP_URL: 'http://localhost:3000',
-  NODE_ENV: 'development',
-};
+export const env = parsed.data!;
 
 export const isDev = env.NODE_ENV === 'development';
 export const isProd = env.NODE_ENV === 'production';
