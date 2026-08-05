@@ -7,6 +7,10 @@
     "client",
     "server"
   ],
+  "dependencies": {
+    "express": "^4.19.2",
+    "media-typer": "^0.3.0"
+  },
   "scripts": {
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
     "dev:client": "npm run dev --workspace=client",
