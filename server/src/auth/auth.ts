@@ -32,6 +32,10 @@ async function getAuth() {
         database: {
           generateId: false, // Disables Better Auth's ID generation in favor of PostgreSQL UUID generation
         },
+        defaultCookieAttributes: {
+          sameSite: 'none',
+          secure: true,
+        },
       },
     });
   }
