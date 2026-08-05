@@ -112,14 +112,7 @@ cypress/screenshots/
 uploads/
 public/uploads/
 
-############################
-# Generated Screenshots
-############################
-screenshots/
-*.png
-*.jpg
-*.jpeg
-*.webp
+
 
 ############################
 # Documentation (Optional)
