@@ -17,7 +17,7 @@
     "build": "npm run build:shared && npm run build:client && npm run build:server",
     "lint": "npm run lint --workspaces",
     "test": "npm run test --workspace=server",
-    "format": "prettier --write .",
+    "format": "prettier --write ."
     
   },
   "devDependencies": {
