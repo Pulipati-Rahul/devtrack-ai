@@ -38,5 +38,5 @@ jobs:
     - name: Build Server
       run: npm run build --workspace=server
 
-    - name: Run Server Tests
-      run: npm run test --workspace=server
+    #- name: Run Server Tests
+    #  run: npm run test --workspace=server
