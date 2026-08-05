@@ -9,6 +9,8 @@ export class AppError extends Error {
     this.code = code;
     this.details = details;
     Object.setPrototypeOf(this, new.target.prototype);
-    Error.captureStackTrace(this, this.constructor);
+    if (typeof (Error as any).captureStackTrace === 'function') {
+      (Error as any).captureStackTrace(this, this.constructor);
+    }
   }
 }
