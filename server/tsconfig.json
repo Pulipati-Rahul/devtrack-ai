@@ -1,18 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es2022",
+    "target": "ES2022",
     "module": "commonjs",
     "moduleResolution": "node",
+    "moduleDetection": "force",
+
     "outDir": "./dist",
     "rootDir": "./src",
+
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+
     "jsx": "react",
+
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["./src/*"],
       "@shared/*": ["../shared/dist/*"]
     }
   },

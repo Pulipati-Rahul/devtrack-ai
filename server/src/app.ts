@@ -9,7 +9,6 @@ import { configureSwagger } from './docs/swagger';
 import v1Router from './routes/v1';
 import { ROUTES } from './constants/api-constants';
 
-import { toNodeHandler } from 'better-auth/node';
 import { auth } from './auth/auth';
 
 const app = express();
@@ -22,7 +21,14 @@ app.use(requestId);
 configureSecurity(app);
 
 // 3. Catch-all route for Better Auth (runs BEFORE body parsing)
-app.all('/api/auth/*', toNodeHandler(auth));
+app.all('/api/auth/*', async (req, res, next) => {
+  try {
+    const { toNodeHandler } = await import('better-auth/node');
+    return toNodeHandler(auth)(req, res);
+  } catch (error) {
+    next(error);
+  }
+});
 
 // 4. Configure Express body parsing size limits
 configureBodyParsers(app);
