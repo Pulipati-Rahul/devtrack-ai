@@ -17,11 +17,11 @@ async function getAuth() {
         enabled: true,
         autoSignIn: true,
         sendVerificationEmail: async ({ user, url }: { user: any; url: string }) => {
-          const { emailService } = await import('../email/services/email.service');
+          const { emailService } = await import('../email/services/email.service.js');
           await emailService.sendVerification(user.email, user.name, url);
         },
         sendResetPassword: async ({ user, url }: { user: any; url: string }) => {
-          const { emailService } = await import('../email/services/email.service');
+          const { emailService } = await import('../email/services/email.service.js');
           await emailService.sendPasswordReset(user.email, user.name, url);
         },
       },
